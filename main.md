@@ -68,3 +68,27 @@ Clean Cache : 清除缓存。
 2. 配置服务器设置：关闭服务器，在服务器文件夹中可以找到名为default.yml的配置文件，通过修改其中参数进行设置，再重新打开unity-cache-server.cmd即可。
 
 ###### 开机自动启动与崩溃重启服务
+[参考文章](https://blog.csdn.net/wuming22222/article/details/51714111)
+1. 首先需要两个小程序instsrv.exe和srvany.exe[下载传送门](http://www.techeez.com/windows-tips/techeez-com-31)
+2. 解压后将instsrv.exe和srvany.exe放到C:\Windows\目录下（因为创建了的Windows服务运行时会使用到srvany.exe）
+3. 创建Windows服务：打开DOS命令窗口到达该目录下输入命令，并回车，如图：
+
+![创建Windows服务cmd指令](https://raw.githubusercontent.com/XieShou/Unity-Cache-Server/master/3.png)
+
+4. 计算机->右键->管理，可看到： 
+
+![Windows服务窗口](https://raw.githubusercontent.com/XieShou/Unity-Cache-Server/master/4.jpg)
+
+5. 修改注册表:
+“运行”中写命令“regedit”回车，打开注册表编辑器
+	1. 定位到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\UnityCacheServer
+	2. 在UnityCacheServer右键->新建->项， 命名Parameters
+	3. 右键Parameters->新建->字符串值，命名Application
+	4. 右键Application->修改，写入应用程序或命令脚本等的绝对路径（包括盘符和文件的尾缀名） 点击确定 
+	
+6.重启电脑可以看到我们的Windows服务自动运行了。即自动执行了unity-cache-server.cmd。
+
+7.删除服务的方法：
+今后若想移除上面新建的Windows服务，首先停止该服务然后到目录C:\Windows\下执行命令：
+```instsrv UnityCacheServer remove ```
+回车，提示：```The service was successfully deleted!``` 即表示删除成功。 
