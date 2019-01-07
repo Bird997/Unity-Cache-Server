@@ -32,5 +32,7 @@
 
 ### 使用方法
 ###### 本地单机模式
-如图下设置即可使用本地版本的Cache Server，不需要安装其他东西
+
+如图设置即可使用本地版本的Cache Server，不需要安装其他东西
+![window](https://raw.githubusercontent.com/XieShou/Unity-Cache-Server/master/1.jpg)
 
