@@ -36,3 +36,35 @@
 如图设置即可使用本地版本的Cache Server，不需要安装其他东西
 ![window](https://raw.githubusercontent.com/XieShou/Unity-Cache-Server/master/1.jpg)
 
+Cache Server Mode : 在这里我们选Local。
+   1. Local	缓存服务器模式选择本地模式，可以单机使用。
+   2. Remote 输入IP地址连接服务器。
+   3. disabled 禁用Cache Server。
+   
+Maximum Cache Size : 最大缓存大小，默认是10GB。
+
+Custom cache location : 勾选上可以选择自定义缓存文件夹，不勾选则默认在C盘。
+
+Check Cache Size : 可以获得当前缓存文件的内存大小。
+
+Clean Cache : 清除缓存。
+
+###### 服务器模式
+1. 先前往 [Node.JS website](https://nodejs.org/en/download/) 下载安装LTS。
+2. 打开安装好的Node.js command prompt，选择下方命令中的一个执行。
+    - Npm安装：
+    ```npm install unity-cache-server -g```
+	- Github安装：
+    ```npm install github:Unity-Technologies/unity-cache-server -g```
+3. 找到自动安装完成的文件，找到Windows命令脚本 `unity-cache-server.cmd` 双击运行即可开启默认配置的Cache Server。
+4. 客户端使用：
+    1. 打开Unity Preferences -> CacheServer界面，选择Cache Server Mode = Remote。
+	2. 填入IP地址 【服务器ip】，点击Check Connection检测连接，出现Connection successful即为连接成功。注：如果服务器在本地计算机上，需要使用127.0.0.1:端口号
+    3. 资源导入时产生的数据文件会自动上传到服务器上，切换平台会自动从服务器上下载。
+
+### 服务器注意事项：
+###### 手动窗口操作（已经实现Windows Server自动）
+1. 每次手动打开unity-cache-server.cmd即打开缓存服务，关闭窗口即关闭缓存服务，所以使用Unity Cache Server需要保持窗口没有被关闭。
+2. 配置服务器设置：关闭服务器，在服务器文件夹中可以找到名为default.yml的配置文件，通过修改其中参数进行设置，再重新打开unity-cache-server.cmd即可。
+
+###### 开机自动启动与崩溃重启服务
