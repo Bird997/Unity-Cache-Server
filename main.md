@@ -95,5 +95,6 @@ Clean Cache : 清除缓存。
 回车，提示：```The service was successfully deleted!``` 即表示删除成功。 
 
 8. 在计算机-管理-服务窗口中，找到UnityCacheServer，右键-属性，打开属性设置界面，如图设置即可自动恢复，重启服务。
+
 ![自动恢复](https://raw.githubusercontent.com/XieShou/Unity-Cache-Server/master/5.png)
 
