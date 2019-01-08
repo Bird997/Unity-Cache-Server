@@ -59,7 +59,7 @@ Clean Cache : 清除缓存。
 3. 找到自动安装完成的文件，找到Windows命令脚本 `unity-cache-server.cmd` 双击运行即可开启默认配置的Cache Server。
 4. 客户端使用：
     1. 打开Unity Preferences -> CacheServer界面，选择Cache Server Mode = Remote。
-	2. 填入IP地址 【服务器ip】，点击Check Connection检测连接，出现Connection successful即为连接成功。注：如果服务器在本地计算机上，需要使用127.0.0.1:端口号
+	2. 填入IP地址，点击Check Connection检测连接，出现Connection successful即为连接成功。注：如果服务器在本地计算机上，需要使用127.0.0.1:端口号
     3. 资源导入时产生的数据文件会自动上传到服务器上，切换平台会自动从服务器上下载。
 
 ### 服务器注意事项：
